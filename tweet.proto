@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package twitter;
+
+import "google/protobuf/timestamp.proto";
+
+message Tweet {
+  double id = 1;
+  string id_str = 2;
+  string conversation_id = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  double user_id = 5;
+  string user_id_str = 6;
+  string username = 7;
+  string name = 8;
+  string place = 9;
+  string timezone = 10;
+
+  message User {
+    string screen_name = 1;
+    string name = 2;
+    string id = 3;
+  }
+
+  repeated User mentions = 11;
+  repeated User reply_to = 12;
+  repeated string urls = 13;
+  repeated string photos = 14;
+  double video = 15;
+  string thumbnail = 16;
+  string tweet = 17;
+  string lang = 18;
+  repeated string hashtags = 19;
+  repeated string cashtags = 20;
+  double replies_count = 21;
+  double retweets_count = 22;
+  double likes_count = 23;
+  string link = 24;
+  bool retweet = 25;
+  string retweet_id = 26;
+  string retweet_date = 27;
+  string user_rt = 28;
+  string user_rt_id = 29;
+  string quote_url = 30;
+  bool is_quote_url_deleted = 31;
+  string near = 32;
+  string geo = 33;
+  string source = 34;
+  string translate = 35;
+  string trans_src = 36;
+  string trans_dest = 37;
+}
